@@ -1,0 +1,17 @@
+<!-- CARDS -->
+    <div class="row mt-5">
+      {% for key, value in hotels.items() %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src= {{ value.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ value.title }}</h2>
+            <p class="card-text">{{ value.description|truncate(100) }}</p>
+            <a href="/tours/{{ key }}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
