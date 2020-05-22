@@ -3,10 +3,10 @@ import data
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
-app.debug = True
+#app.debug = True
 
-app.config["SECRET_KEY"] = "super_secret_key"
-toolbar = DebugToolbarExtension(app)
+#app.config["SECRET_KEY"] = "super_secret_key"
+#toolbar = DebugToolbarExtension(app)
 
 @app.route("/")
 def first():
@@ -31,6 +31,6 @@ def route_tours(id):
   else:
     return "Not existing", 404
 	
-#if __name__ == "__main__":
-	#app.run(host = "185.162.131.72", port=80)
-app.run(debug = True)
+if __name__ == "__main__":
+	app.run(host = "185.162.131.72", port=81)
+
