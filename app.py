@@ -26,7 +26,10 @@ def route_departures(departure):
 
 @app.route("/tours/<id>")
 def route_tours(id):
-  return render_template("tour.html", departures=data.departures, tour=data.tours[int(id)])
+  if int(id) in data.tours:
+    return render_template("tour.html", departures=data.departures, tour=data.tours[int(id)])
+  else:
+    return "Not existing", 404
 	
 #if __name__ == "__main__":
 	#app.run(host = "185.162.131.72", port=80)
